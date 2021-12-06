@@ -6,11 +6,15 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    &__icon {
+    &__iconContainer {
         width: 100%;
         text-align: end;
-        margin-bottom: 1rem;
     }
+
+    &__infos {
+        width: 50%;
+    }
+
     &__city {
         font-weight: 700;
         margin: 0;
@@ -24,6 +28,8 @@
     &__temperature {
         align-self: flex-start;
         font-weight: 700;
+        width: 50%;
+        text-align: center;
     }
 
 }
