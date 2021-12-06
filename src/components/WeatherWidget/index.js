@@ -7,9 +7,9 @@ import './style.scss';
 
 export default function WeatherWidget({ city }) {
   // local state
-  const [description, setDescscription] = useState('temps dégagé');
-  const [temperature, setTemperature] = useState('13');
-  const [iconId, setIconId] = useState('10d');
+  const [description, setDescscription] = useState('');
+  const [temperature, setTemperature] = useState('');
+  const [iconId, setIconId] = useState('02d');
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -41,16 +41,18 @@ export default function WeatherWidget({ city }) {
 
   let icon = `http://openweathermap.org/img/wn/${iconId}@2x.png`
 
+  const errorClassName = error ? '--error' : '';
+
   return (
     <div className="weather-widget">
         <div className="weather-widget__iconContainer">
           <img className="weather-widget__icon"src={icon} alt="weather icon" />
         </div>
-        <div className="weather-widget__infos">
-          {error ? <p className="weather-widget__city">Cette ville n'existe pas</p> : <p className="weather-widget__city">{city}</p> }
+        <div className={`weather-widget__infos weather-widget__infos${errorClassName}`}>
+          {error ? <p className="weather-widget__errorMessage">Cette ville n'existe pas</p> : <p className="weather-widget__city">{city}</p> }
           <p className="weather-widget__description">{description}</p>
         </div>
-        <div className="weather-widget__temperature">{temperature}<sup>°</sup>C</div>
+        <div className={`weather-widget__temperature weather-widget__temperature${errorClassName}`}>{temperature}<sup>°</sup>C</div>
     </div>
   );
 }

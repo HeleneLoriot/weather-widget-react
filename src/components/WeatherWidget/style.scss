@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    min-width: 200px;
     position: relative;
     &__iconContainer {
         width: 100%;
@@ -14,6 +15,11 @@
 
     &__infos {
         width: 50%;
+        &--error {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
     }
 
     &__city {
@@ -32,10 +38,16 @@
         font-weight: 700;
         width: 50%;
         text-align: center;
+
+        &--error {
+            visibility: hidden;
+        }
     }
 
-    &__notfound {
-        position: absolute;
+    &__errorMessage {
+        font-weight: 700;
+        margin: 0;
+        color: vars.$green;
     }
 
 }
