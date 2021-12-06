@@ -16,7 +16,22 @@ export default function WeatherWidget({ city}) {
       const apiKey = process.env.REACT_APP_API_KEY;
 
       //call api open weather
-      console.log('hello')
+      const loadData = async () => {
+        try {
+          const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=fr&appId=${apiKey}`);
+          const { main: { temp }, weather } = response.data;
+          console.log(response)
+          console.log(response.data)
+          setTemperature(temp);
+          setIconId(weather[0].icon)
+          setDescscription(weather[0].description)
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+
+    loadData();
   },[city])
 
   let icon = `http://openweathermap.org/img/wn/${iconId}@2x.png`
