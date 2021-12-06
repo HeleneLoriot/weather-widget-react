@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="container">
+      <div className="app__container">
         <WeatherWidget city={city}/>
         <SearchBar value={inputValue} setValue={setInputValue} onSubmitForm={setCity}/>
       </div>

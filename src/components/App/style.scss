@@ -1,1 +1,16 @@
+@use 'src/vars';
 
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        padding: 2rem;
+        border: solid 1.5px vars.$green;
+        border-radius: 10px;
+        box-shadow: 20px 10px 10px vars.$lightgreen;
+    }
+}

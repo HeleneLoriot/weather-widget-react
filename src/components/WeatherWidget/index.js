@@ -11,11 +11,12 @@ export default function WeatherWidget({ city}) {
 
   return (
     <div className="weather-widget">
+        <div className="weather-widget__icon">&#x1F31E;</div>
         <div className="weather-widget__infos">
           <p className="weather-widget__city">{city}</p>
           <p className="weather-widget__description">{description}</p>
         </div>
-      <div className="weather-widget__temperature">{temperature}<sup>°</sup>C</div>
+        <div className="weather-widget__temperature">{temperature}<sup>°</sup>C</div>
     </div>
   );
 }
