@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     &__iconContainer {
         width: 100%;
         text-align: end;
@@ -31,6 +32,10 @@
         font-weight: 700;
         width: 50%;
         text-align: center;
+    }
+
+    &__notfound {
+        position: absolute;
     }
 
 }
